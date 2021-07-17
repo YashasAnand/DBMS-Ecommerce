@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce</title>
+    <link rel="stylesheet" href="account.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <img src="./images/blog-shopify.jpg" width="125px" />
+          </div>
+          <div>
+          <nav>
+            <ul>
+              <li>
+                <b><a href="index.html">Home</a></b>
+              </li>
+              <li>
+                <b><a href="Product.html">Products</a></b>
+              </li>
+              <li>
+                <b><a href="">About</a></b>
+              </li>
+              <li>
+                <b><a href="">Ratings</a></b>
+              </li>
+              <li>
+                <b><a href="account.html">Account</a></b>
+              </li>
+            </ul>
+          </nav>
+          </div>
+        </div>
+        <!--Account page-->
+        <div class="account-page">
+          <div class="row">
+            <div class="col-4">
+              <div class="form-container">
+              <div class="form-btn">
+                <span onclick="login()">Login</span>
+                <span onclick="register()">Register</span>
+                <hr id="Indicator">
+                </div>
+                <form id="LoginForm" action="login.php" method="POST" enctype="multipart/form-data">
+                     <input type="text" placeholder="Username" name="CUSTOMER_NAME" required>
+                     <input type="password" placeholder="password" name="PASSWORD" required>
+                     <button type="submit" class="btn">Login</button>
+                     <a href="">Forgot Password</a>
+                </form>
+
+                 <form id="RegistrationForm" action="insert.php" method="post" enctype="multipart/form-data">
+                     <input type="text" placeholder="Username" name="CUSTOMER_NAME" required>
+                     <input type="email" placeholder="Email" name="CUSTOMER_EMAIL" required>
+                     <input type="password" placeholder="Password" name="PASSWORD" required>
+                     
+                    <input type ="text" placeholder="Address"name="HOME_ADDRESS" required style="height: 100px;">
+                    <input type="text" placeholder="PIN CODE" name="POST_CODE" required>
+                    <input type="text" pattern="[0-9]{10}" placeholder="Phone Number" name="PHONE" required>
+                     <button type="submit" class="btn">Register</button>
+                     
+                </form>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="footer">
+        <div class="row">
+          <div class="footer-col1">
+            <h3>Download Our App</h3>
+            <p>Download From Google Play Store or App store</p>
+            <div class="app-logo">
+              <img src="images/P1.png" />
+              <img src="images/P2.png" />
+            </div>
+          </div>
+          <div class="footer-col2">
+            <img src="images/blog-shopify.jpg" width="30px" />
+            <p>
+              Hope our services have rendered useful. If so please leave a
+              rating in the rating menu
+            </p>
+          </div>
+          <div class="footer-col3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+          <div class="footer-col4">
+            <h3>Follow us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>Twitter</li>
+              <li>LinkedIn</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--JS for Toggle form-->
+    <script>
+        var LoginForm=document.getElementById("LoginForm");
+        var RegistrationForm=document.getElementById("RegistrationForm");
+        var Indicator=document.getElementById("Indicator");
+        function register()
+        {
+            RegistrationForm.style.transform="translateX(0px)";
+            LoginForm.style.transform="translateX(0px)";
+            Indicator.style.transform="translateX(100px)";
+        }
+          function login()
+        {
+            RegistrationForm.style.transform="translateX(300px)";
+            LoginForm.style.transform="translateX(300px)";
+             Indicator.style.transform="translateX(0px)";
+        }
+
+        </script>
+
+  </body>
+</html>
